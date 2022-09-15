@@ -3,4 +3,9 @@ node_modules
 .terraform
 *.backup
 
+# webstorm
 .idea
+
+# vscode
+.vscode
+*code-workspace
