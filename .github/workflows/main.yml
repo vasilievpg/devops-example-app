@@ -25,8 +25,8 @@ jobs:
         # Получить https://docs.docker.com/docker-hub/access-tokens/
         # Добавить https://docs.github.com/en/actions/security-guides/encrypted-secrets
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Сборка и сразу кеширование, чтобы повторный запуск был быстрее
       - uses: docker/build-push-action@v2
