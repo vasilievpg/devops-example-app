@@ -1,12 +1,22 @@
 version: "3"
 
 services:
-  app:
-    build: .
-    image: hexletcomponents/devops-example-app
+  app: # Само приложение
+    build: . # Находится в корне репозитория
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
 
-  caddy:
-    build:
+  caddy: # Веб-сервер
+    build: # Находится внутри services/caddy
       context: .
       dockerfile: services/caddy/Dockerfile
-    image: hexletcomponents/devops-example-caddy
+    volumes:
+      - .:/app
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - app
