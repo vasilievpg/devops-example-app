@@ -1,9 +1,6 @@
----
-
 - hosts: all
-  gather_facts: no
+  become: yes
   tasks:
-
     - apt:
         name: python3-pip
         update_cache: yes

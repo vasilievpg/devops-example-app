@@ -2,7 +2,9 @@
 
 all:
   children:
-    webservers:
+    webservers: # группа веб-серверов
       hosts:
-        web1:
-          ansible_host: 65.108.149.193
+        web1: # имя сервера выбрано произвольно
+          # Поменяйте на ip вашего сервера
+          ansible_host: 51.250.100.145
+          ansible_ssh_user: devops
